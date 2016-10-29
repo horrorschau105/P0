@@ -2,21 +2,20 @@
 #include <unistd.h>
 #include <thread>
 using namespace std;
-//This function will be called from a thread
-void call1(int tid) 
+void call1(int n) 
 	{
-	sleep(tid/4);
-    cout << tid << endl;
+	sleep(n/4);
+    cout << n << endl;
 	}
-void call2(int tid)
+void call2(int n)
 	{
-	sleep(tid);
-	cout << tid << endl;	
+	sleep(n/3);
+	cout << n << endl;	
 	}
 int main() 
 	{
-	thread xs[10];
-	for(int i=0;i<10;++i)
+	thread xs[8];
+	for(int i=0;i<8;++i)
 	{
 		if(i%2)	xs[i] = thread(call1, i+1);
 		else xs[i] = thread(call2, i+1);
@@ -25,5 +24,6 @@ int main()
 	{
 		xs[i].join();
 	}
+	cout<< "THE END"
     return 0;
 	}

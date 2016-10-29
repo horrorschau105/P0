@@ -20,7 +20,7 @@ int main()
 		if(i%2)	xs[i] = thread(call1, i+1);
 		else xs[i] = thread(call2, i+1);
 	}
-    for(int i=9;i>=0;--i)
+    for(int i=7;i>=0;--i)
 	{
 		xs[i].join();
 	}

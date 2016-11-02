@@ -24,6 +24,6 @@ int main()
 	{
 		xs[i].join();
 	}
-	cout<< "THE END"
+	cout<< "THE END";
     return 0;
 	}
